@@ -60,7 +60,7 @@ class _SignFormState extends State<SignForm> {
                 onTap: () {
                 //Navigator.pushNamed(context, SignUpScreen.routeName);
                 },
-                child: BodyText(text:"Forgot Password",),
+                child: BodyText(text:"Forgot Password",color: kPrimaryColor,),
               )
             ],
           ),
