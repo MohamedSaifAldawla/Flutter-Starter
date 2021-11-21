@@ -6,9 +6,9 @@ import 'package:flutter_app/size_config.dart';
 const kPrimaryColor = Color(0xFF00685C);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-  colors: [Color(0xFF4fc1e9), Color(0xFF0b9bd0)],
+  begin: Alignment.bottomRight,
+  end: Alignment.topLeft,
+  colors: [Color(0xFF00685C), Color(0xFF002E33)],
 );
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);

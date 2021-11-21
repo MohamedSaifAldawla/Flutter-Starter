@@ -18,45 +18,104 @@ class DefaultButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: getProportionateScreenWidth(50),
-      child:TextButton(
-        style: TextButton.styleFrom(
-          shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          primary: Colors.white,
-          backgroundColor: kPrimaryColor,
-          elevation: 9.0,
-          shadowColor:kPrimaryColor, 
+      child: InkWell(
+      onTap: press as void Function(),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: kPrimaryGradientColor,
+            boxShadow: [
+              BoxShadow(
+              color: Color.fromRGBO(0, 46, 51, .3),
+              blurRadius: 10,
+              offset: const Offset(0, 10),
+                ),
+            ],
         ),
-        onPressed: press as void Function(),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-           SizedBox(width: getProportionateScreenWidth(80)),
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: getProportionateScreenWidth(18),
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+             SizedBox(width: getProportionateScreenWidth(80)),
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: getProportionateScreenWidth(18),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-           SizedBox(width: getProportionateScreenWidth(60)),
-           SvgPicture.asset(
-              "assets/icons/Lock.svg",
-              height: getProportionateScreenWidth(18),
-              color: Colors.white,
-            ),
-           //Icon(Icons.login_outlined,size: 32,),
-          ],
+             SizedBox(width: getProportionateScreenWidth(60)),
+             SvgPicture.asset(
+                "assets/icons/Lock.svg",
+                height: getProportionateScreenWidth(18),
+                color: Colors.white,
+              ),
+             //Icon(Icons.login_outlined,size: 32,),
+            ],
+          ),
         ),
       ),
     );
   }
+}
 
 
 
 
 
-// @override
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // child:TextButton(
+      //   onPressed: press as void Function(),
+      //   style: TextButton.styleFrom(
+      //     shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      //     primary: Colors.white,
+      //     backgroundColor: kPrimaryColor,
+      //     elevation: 9.0,
+      //     shadowColor:kPrimaryColor,
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //      SizedBox(width: getProportionateScreenWidth(80)),
+      //       Text(
+      //         text,
+      //         style: TextStyle(
+      //           fontSize: getProportionateScreenWidth(18),
+      //           color: Colors.white,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //      SizedBox(width: getProportionateScreenWidth(60)),
+      //      SvgPicture.asset(
+      //         "assets/icons/Lock.svg",
+      //         height: getProportionateScreenWidth(18),
+      //         color: Colors.white,
+      //       ),
+      //      //Icon(Icons.login_outlined,size: 32,),
+      //     ],
+      //   ),
+      // ),
+
+      // @override
 //   Widget build(BuildContext context) {
 //     return SizedBox(
 //       width: double.infinity,
@@ -106,4 +165,3 @@ class DefaultButton extends StatelessWidget {
   //     ),
   //   );
   // }
-}

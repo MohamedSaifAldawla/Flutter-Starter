@@ -26,7 +26,7 @@ class SocalCard extends StatelessWidget {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-            color: Color.fromRGBO(0, 46, 51, .09),
+            color: Color.fromRGBO(0, 46, 51, .2),
             blurRadius:10,
             offset: Offset(0, 10),
             ),
