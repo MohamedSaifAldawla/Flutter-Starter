@@ -35,21 +35,22 @@ class DefaultButton extends StatelessWidget {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             SizedBox(width: getProportionateScreenWidth(80)),
               Text(
-                text,
+                text.toUpperCase(),
                 style: TextStyle(
-                  fontSize: getProportionateScreenWidth(18),
+                  fontSize: getProportionateScreenWidth(16),
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-             SizedBox(width: getProportionateScreenWidth(60)),
-             SvgPicture.asset(
-                "assets/icons/Lock.svg",
-                height: getProportionateScreenWidth(18),
-                color: Colors.white,
-              ),
+             //SizedBox(width: getProportionateScreenWidth(60),),
+            //  SvgPicture.asset(
+            //     "assets/icons/Sent.svg",
+            //     height: getProportionateScreenWidth(20),
+            //     color: Colors.white,
+                
+            //   ),
+            //  SizedBox(width: getProportionateScreenWidth(0),),
              //Icon(Icons.login_outlined,size: 32,),
             ],
           ),

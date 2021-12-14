@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_app/size_config.dart';
 
 import 'constants.dart';
   ThemeData theme() {
     return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       fontFamily: "Muli",
-      brightness: Brightness.light,
+      //brightness: Brightness.light,
       appBarTheme: appBarTheme(),
       textTheme: textTheme(),
       inputDecorationTheme: InputTheme(),
@@ -15,7 +17,11 @@ import 'constants.dart';
 
 AppBarTheme appBarTheme() {
     return const AppBarTheme(
-        backgroundColor:Colors.white ,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: kPrimaryColor,
+        statusBarIconBrightness: Brightness.light,
+      ),
+        backgroundColor:Colors.white,
         foregroundColor: Color(0XFF8B8B8B),
         centerTitle: true,
         elevation: 0,
@@ -34,6 +40,7 @@ AppBarTheme appBarTheme() {
   InputDecorationTheme InputTheme() {
     return InputDecorationTheme(
             floatingLabelBehavior: FloatingLabelBehavior.always,
+           labelStyle: TextStyle(fontSize:  18),
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 35,
               vertical: 20,
@@ -45,7 +52,7 @@ AppBarTheme appBarTheme() {
             ),
             focusedBorder: OutlineInputBorder(
             borderRadius:BorderRadius.circular(28),
-            borderSide: const BorderSide(color: kTextColor),
+            borderSide: const BorderSide(color: kPrimaryColor),
             gapPadding: 10,
             ),
             focusedErrorBorder: OutlineInputBorder(

@@ -42,6 +42,8 @@ class SignInScreen extends StatelessWidget {
                           SizedBox(height: getProportionateScreenWidth(30)),
                           SignForm(),
                           SizedBox(height: getProportionateScreenWidth(20)),
+                          BodyText(text:"- OR -",),
+                          SizedBox(height: getProportionateScreenWidth(20)),
                           Social(),
                           SizedBox(height: getProportionateScreenWidth(20)),
                           NoAccountText(),
