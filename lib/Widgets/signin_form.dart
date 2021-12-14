@@ -17,7 +17,6 @@ class _SignFormState extends State<SignForm> {
   String password;
   bool remember = false;
   final List<String> errors = [];
-  
 
   void addError({String error}) {
     if (!errors.contains(error))
@@ -39,9 +38,11 @@ class _SignFormState extends State<SignForm> {
       key: _formKey,
       child: Column(
         children: [
-          buildEmailFormField("Email","Enter your email","email","assets/icons/Mail.svg"),
+          buildEmailFormField(
+              "Email", "Enter your email", "email", "assets/icons/Mail.svg"),
           SizedBox(height: getProportionateScreenWidth(25)),
-          buildPasswordFormField("Password","Enter your password","password","assets/icons/Lock.svg"),
+          buildPasswordFormField("Password", "Enter your password", "password",
+              "assets/icons/Lock.svg"),
           SizedBox(height: getProportionateScreenWidth(10)),
           Row(
             children: [
@@ -54,13 +55,18 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              BodyText(text:"Remember me",),
+              BodyText(
+                text: "Remember me",
+              ),
               Spacer(),
               GestureDetector(
                 onTap: () {
-                //Navigator.pushNamed(context, SignUpScreen.routeName);
+                  //Navigator.pushNamed(context, SignUpScreen.routeName);
                 },
-                child: BodyText(text:"Forgot Password",color: kPrimaryColor,),
+                child: BodyText(
+                  text: "Forgot Password",
+                  color: kPrimaryColor,
+                ),
               )
             ],
           ),
@@ -81,20 +87,21 @@ class _SignFormState extends State<SignForm> {
       ),
     );
   }
-  
-  Container buildEmailFormField(String label,String hint,String type, String icon) {
+
+  Container buildEmailFormField(
+      String label, String hint, String type, String icon) {
     return Container(
-        decoration: BoxDecoration(
+      decoration: BoxDecoration(
         boxShadow: [
-        BoxShadow(
-        color: Color.fromRGBO(146, 147, 141, .2),
-        //spreadRadius: 5,
-        blurRadius: 20.0,
-        offset: const Offset(0, 10),
+          BoxShadow(
+            color: Color.fromRGBO(146, 147, 141, .2),
+            //spreadRadius: 5,
+            blurRadius: 20.0,
+            offset: const Offset(0, 10),
           ),
         ],
       ),
-      child: TextFormField(   
+      child: TextFormField(
         keyboardType: TextInputType.emailAddress,
         onSaved: (newValue) => email = newValue,
         onChanged: (value) {
@@ -118,7 +125,7 @@ class _SignFormState extends State<SignForm> {
         decoration: InputDecoration(
           labelText: label,
           hintText: hint,
-          suffixIcon: SuffixIcon(inputIcon:icon),
+          suffixIcon: SuffixIcon(inputIcon: icon),
           fillColor: Colors.white,
           filled: true,
         ),
@@ -127,14 +134,15 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
-  Container buildPasswordFormField(String label,String hint,String type, String icon) {
+  Container buildPasswordFormField(
+      String label, String hint, String type, String icon) {
     return Container(
-        decoration: BoxDecoration(
+      decoration: BoxDecoration(
         boxShadow: [
-        BoxShadow(
-        color: Color.fromRGBO(146, 147, 141, .2),
-        blurRadius: 20.0,
-        offset: const Offset(0, 10),
+          BoxShadow(
+            color: Color.fromRGBO(146, 147, 141, .2),
+            blurRadius: 20.0,
+            offset: const Offset(0, 10),
           ),
         ],
       ),
@@ -162,7 +170,7 @@ class _SignFormState extends State<SignForm> {
         decoration: InputDecoration(
           labelText: label,
           hintText: hint,
-          suffixIcon: SuffixIcon(inputIcon:icon),
+          suffixIcon: SuffixIcon(inputIcon: icon),
           fillColor: Colors.white,
           filled: true,
         ),
@@ -170,5 +178,4 @@ class _SignFormState extends State<SignForm> {
       ),
     );
   }
-
 }
